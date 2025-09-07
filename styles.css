@@ -256,9 +256,14 @@ section {
   margin-bottom: 20px;
 }
 
-/* Footer styles: move footer a bit to the right */
+/* Footer styles: center the footer in the middle of the page and add background */
 footer {
-  margin-left: 40px; /* Move the footer to the right */
+  margin-left: 0;            /* Remove left margin */
+  text-align: center;        /* Center the text */
+  background-color: #77A8BB; /* Add background color */
+  color: #fff;               /* Make text white */
+  padding: 18px 0;           /* Add some space above and below */
+  border-radius: 8px;        /* Rounded corners for footer */
 }
 
 /* 
