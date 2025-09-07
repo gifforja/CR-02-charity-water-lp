@@ -71,10 +71,27 @@ section {
   background-repeat: no-repeat;  /* Do not repeat the image */
   color: #fff;                   /* White text for contrast */
   text-align: center;            /* Center the text */
-  padding: 60px 20px;            /* Add space above and below */
+  /* Move the content lower by adding more space at the top */
+  padding-top: 320px;            /* Large space at the top */
+  padding-bottom: 60px;          /* Normal space at the bottom */
+  padding-left: 20px;
+  padding-right: 20px;
   border-radius: 0 0 16px 16px;  /* Only round bottom corners */
   margin-top: 0;                 /* No gap between navbar and hero */
   min-height: 500px;             /* Show more of the background image vertically */
+}
+
+/* Move the hero content lower in the hero section */
+.hero-content {
+  margin-top: 120px; /* Moves the header, subheader, and button lower */
+  background: rgba(26,26,26,0.5);   /* 50% #1A1A1A tint background */
+  border: 2px solid #1A1A1A;        /* Dark border color */
+  border-radius: 14px;              /* Rounded corners */
+  padding: 32px 20px;               /* Space inside the box */
+  max-width: 480px;                 /* Limit width for better readability */
+  margin-left: auto;                /* Center horizontally */
+  margin-right: auto;               /* Center horizontally */
+  box-shadow: 0 4px 16px rgba(46,157,247,0.10); /* Soft shadow for depth */
 }
 
 /* Make the headline bold and modern */
