@@ -14,7 +14,7 @@ Secondary Colors:
 
 Fonts:
 - Proxima Nova
-- Avenir
+
 
 */
 
@@ -52,7 +52,13 @@ section {
   position: relative;
   z-index: 10;
   margin-bottom: 0;
-  justify-content: space-between; /* Space between logo and links, puts links on right */
+  justify-content: space-between;
+}
+
+/* Make sure navbar content is above the bar */
+.navbar > * {
+  position: relative;
+  z-index: 2;
 }
 
 /* Logo styles for the navbar */
@@ -74,17 +80,20 @@ section {
 
 /* Navbar link styles */
 .navbar-links a {
-  color: #1A1A1A;              /* Changed to requested color */
+  color: #fff;                     /* White text */
+  background-color: #1A1A1A;       /* Dark background for button */
   text-decoration: none;
   font-weight: bold;
   font-size: 1em;
-  padding: 6px 12px;
+  padding: 6px 16px;               /* More padding for button look */
   border-radius: 4px;
   transition: background 0.2s;
+  margin-left: 4px;                /* Small space between buttons */
 }
 
 .navbar-links a:hover {
-  background-color: #e6f2fa;    /* Light blue background on hover */
+  background-color: #77A8BB;   /* Change background to #77A8BB on hover */
+  color: #fff;                 /* Keep text white on hover */
 }
 
 /* Hero Section Styles */
@@ -141,6 +150,7 @@ section {
   margin-bottom: 15px;
   text-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Soft shadow for readability */
   text-align: left; /* Align headline to the left */
+  font-family: 'Proxima Nova', Arial, sans-serif; /* Ensure header uses Proxima Nova */
 }
 
 /* Style the subheadline */
@@ -148,7 +158,8 @@ section {
   font-size: 1.2em;
   margin-top: 0;
   text-shadow: 0 1px 4px rgba(0,0,0,0.12);
-  text-align: left; /* Align subheadline to the left */
+  text-align: left;
+  font-family: 'Proxima Nova', Arial, sans-serif; /* Ensure subheader uses Proxima Nova */
 }
 
 /* Story Section Styles */
