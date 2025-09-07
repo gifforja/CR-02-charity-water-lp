@@ -256,6 +256,11 @@ section {
   margin-bottom: 20px;
 }
 
+/* Footer styles: move footer a bit to the right */
+footer {
+  margin-left: 40px; /* Move the footer to the right */
+}
+
 /* 
   Media Queries for Responsive Design
   Media queries help make your website look good on different screen sizes,
