@@ -26,7 +26,7 @@ Fonts:
 /* Set up the main font and background color for the whole page */
 body {
   background-color: #f4f8fb; /* Soft light blue for a fresh look */
-  font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
+  font-family: 'Proxima Nova', Arial, sans-serif; /* Use Proxima Nova for all text */
   margin: 0;
   padding: 0;
   color: #222;
@@ -44,14 +44,15 @@ section {
 /* Navbar styles */
 .navbar {
   width: 100%;
-  background-color: #fff; /* White background for navbar */
-  padding: 10px 24px;     /* Space around the logo */
-  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.07); /* Soft shadow */
-  display: flex;          /* Use flex to align items */
-  align-items: center;    /* Vertically center the logo */
-  position: relative;     /* Keep navbar at the top */
-  z-index: 10;            /* Make sure navbar is above hero section */
-  margin-bottom: 0;       /* No gap below navbar */
+  background-color: #fff;
+  padding: 10px 24px;
+  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.07);
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  margin-bottom: 0;
+  justify-content: space-between; /* Space between logo and links, puts links on right */
 }
 
 /* Logo styles for the navbar */
@@ -59,6 +60,31 @@ section {
   height: 40px;           /* Set logo height */
   width: auto;            /* Keep logo aspect ratio */
   display: block;
+}
+
+/* Navbar links container */
+.navbar-links {
+  display: flex;
+  gap: 24px;
+  justify-content: flex-end; /* Align links to the right */
+  align-items: center;
+  margin-left: 0;
+  margin-right: 40px; /* Move links a bit more to the left but keep on right */
+}
+
+/* Navbar link styles */
+.navbar-links a {
+  color: #1A1A1A;              /* Changed to requested color */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.navbar-links a:hover {
+  background-color: #e6f2fa;    /* Light blue background on hover */
 }
 
 /* Hero Section Styles */
@@ -94,6 +120,17 @@ section {
   max-width: 480px;                 /* Limit width for better readability */
   box-shadow: 0 4px 16px rgba(46,157,247,0.10); /* Soft shadow for depth */
   text-align: left;                 /* Align text to the left */
+  /* Add relative positioning for centering the button */
+}
+
+/* Center the donate button below the header and subheader */
+.hero-content .donate-button {
+  display: block;
+  margin: 24px auto 0 auto;
+  text-align: center;
+  min-width: 160px;      /* Set a minimum width for the button */
+  max-width: 220px;      /* Set a maximum width for the button */
+  width: 100%;           /* Let the button fill up to max-width */
 }
 
 /* Make the headline bold and modern */
@@ -124,17 +161,36 @@ section {
 
 /* Real Story Section Styles */
 .impact-story {
-  background-color: #1A1A1A; /* Set background to dark */
-  color: #fff;               /* Set all text in section to white */
+  background-color: #1A1A1A;
+  color: #fff;
   text-align: center;
   padding: 30px 20px;
 }
 
 /* Real Story Section Header */
 .impact-story h2 {
-  color: #fff; /* Header font color white */
+  color: #fff;
   margin-top: 0;
   font-weight: bold;
+  background-color: #77A8BB;
+  padding: 10px 24px;
+  border-radius: 8px;
+  display: inline-block;
+  width: auto;
+  box-sizing: border-box;
+  font-size: 2em; /* Increase the size of the real story header */
+}
+
+/* Real Story Section Text Background */
+.impact-story .impact-content p {
+  background-color: transparent;
+  color: #fff;
+  padding: 16px 18px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.3em; /* Increased font size for real story text */
 }
 
 /* Add accent color to section headings */
@@ -155,7 +211,7 @@ h2 {
 /* Style the impact story image */
 .impact-image {
   width: 100%;
-  max-width: 320px;
+  max-width: 420px; /* Increased from 320px to 420px */
   border-radius: 10px;
   margin-bottom: 16px;
   box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
@@ -164,9 +220,9 @@ h2 {
 /* Donate Button Styles */
 .donate-button {
   display: inline-block;
-  background-color: #7AA8BB; /* Changed from green to requested color */
+  background-color: #7AA8BB;
   color: #fff;
-  padding: 14px 32px;
+  padding: 14px 12px;    /* Further decrease left/right padding for a shorter button */
   text-decoration: none;
   border-radius: 6px;
   font-weight: bold;
@@ -240,22 +296,54 @@ section {
     text-align: center; /* Center text on small screens */
     max-width: 100%;
   }
+  .hero-content .donate-button {
+    margin: 24px auto 0 auto; /* Keep button centered on small screens */
+  }
 }
 
 /* This media query applies styles when the screen is wider than 600px (like on tablets and computers) */
 @media (min-width: 601px) {
-  /* Show image and text side by side in the impact story */
   .impact-content {
-    display: flex;           /* Place items in a row */
-    align-items: center;     /* Vertically center items */
-    justify-content: center; /* Center the whole group */
-    gap: 28px;               /* Space between image and text */
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 28px;
     text-align: left;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
   }
 
   .impact-image {
-    width: 300px;
+    width: 400px;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 0;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .impact-text-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 420px;
+    margin-left: 0;
+  }
+
+  .impact-text-group h2 {
+    margin-bottom: 18px;
+    margin-top: 0;
+    text-align: left;     /* Align header left */
+    width: 100%;
+    align-self: flex-start; /* Make sure header aligns with text */
+  }
+
+  .impact-text-group p {
+    margin-top: 0;
+    text-align: left;     /* Align text left under header */
+    width: 100%;
   }
 }
