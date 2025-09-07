@@ -124,15 +124,15 @@ section {
 
 /* Real Story Section Styles */
 .impact-story {
-  background-color: #CBCCD1; /* Updated background color for real story section */
-  color: #1A1A1A;            /* Updated font color */
+  background-color: #1A1A1A; /* Set background to dark */
+  color: #fff;               /* Set all text in section to white */
   text-align: center;
   padding: 30px 20px;
 }
 
 /* Real Story Section Header */
 .impact-story h2 {
-  color: #003366; /* Real story header color */
+  color: #fff; /* Header font color white */
   margin-top: 0;
   font-weight: bold;
 }
