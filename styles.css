@@ -41,6 +41,26 @@ section {
   padding: 24px 16px;
 }
 
+/* Navbar styles */
+.navbar {
+  width: 100%;
+  background-color: #fff; /* White background for navbar */
+  padding: 10px 24px;     /* Space around the logo */
+  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.07); /* Soft shadow */
+  display: flex;          /* Use flex to align items */
+  align-items: center;    /* Vertically center the logo */
+  position: relative;     /* Keep navbar at the top */
+  z-index: 10;            /* Make sure navbar is above hero section */
+  margin-bottom: 0;       /* No gap below navbar */
+}
+
+/* Logo styles for the navbar */
+.navbar-logo {
+  height: 40px;           /* Set logo height */
+  width: auto;            /* Keep logo aspect ratio */
+  display: block;
+}
+
 /* Hero Section Styles */
 .hero {
   position: relative; /* Needed for overlay */
